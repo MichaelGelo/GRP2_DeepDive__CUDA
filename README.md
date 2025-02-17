@@ -33,4 +33,4 @@ The program initializes vectors of size `n = 2^28` 32-bit integers. Each kernel 
 ### **v.) Comparative Table of Execution Time and Analysis of the Performance of the Kernel**
 
 ---
-### **vii.) Discussion**
+### **vi.) Discussion**
