@@ -16,4 +16,21 @@ This project involves implementing and comparing the performance of two versions
 2. **CUDA program w/ Unified memory, pre-fetching and memadvise**
 
 The program initializes vectors of size `n = 2^28` 32-bit integers. Each kernel is executed 30 times, and the average execution time is recorded. Correctness is checked against the C program.
+
 ---
+### **i.) Youtube Video**
+
+---
+### **ii.) Screenshot of the Program Output with execution time**
+
+---
+### **iii.) Screenshot of the Program Output with correctness check (C)**
+
+---
+### **iv.) Screenshot of the Program Output, including correctness check (CUDA))**
+
+---
+### **v.) Comparative Table of Execution Time and Analysis of the Performance of the Kernel**
+
+---
+### **vii.) Discussion**
