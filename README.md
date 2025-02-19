@@ -34,11 +34,13 @@ The program initializes vectors of size `n = 2^28` 32-bit integers. Each kernel 
 ### **iii.) Screenshot of the Program Output with correctness check (C)**
 
 <img src="https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/9324767d17656cb57332c09564ae6e22a9b3edfb/exec_times/c_code.png" alt="image alt" width="500"/>
+This C program creates a large array of integers, groups them into 10 bins based on the remainder, and then measures the time necessary to compute the histogram.
 
 ---
 ### **iv.) Screenshot of the Program Output, including correctness check (CUDA)**
 
 <img src="https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/9324767d17656cb57332c09564ae6e22a9b3edfb/exec_times/cuda_code.png" alt="image alt" width="500"/>
+This CUDA program uses Unified Memory, memadvise, and prefetching to build a histogram (modulo 10) using atomic operations, and then compares the output to a CPU-computed one.
 
 ---
 ### **v.) Comparative Table of Execution Time and Analysis of the Performance of the Kernel**
