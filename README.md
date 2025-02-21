@@ -19,7 +19,7 @@ The program initializes vectors of size `n = 2^28` 32-bit integers. Each kernel 
 
 ---
 ### **i.) Youtube Video**
-[CUDA DeepDive Presentation](https://youtu.be/nNN23sDyjek)
+[Group 2 Presentation](https://youtu.be/nNN23sDyjek)
 
 ---
 ### **ii.) Screenshot of the Program Output with execution time**
