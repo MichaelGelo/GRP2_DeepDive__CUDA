@@ -54,11 +54,13 @@ This CUDA program uses Unified Memory, memadvise, and prefetching to build a his
 
 # Performance Comparison: C vs. CUDA (Atomic Operations)
 
-| Implementation | Execution Time (ms) | Loops | Array Size |
-|---------------|--------------------|-------|------------|
-| **C (Raw)**   | 1172.04            | 30    | 268435456  |
-| **C (Atomic Operations)**   | 2333.54            | 30    | 268435456  |
-| **CUDA (Atomic Operations)** | 63.63 | 30    | 268435456  |
+| Implementation               | Execution Time (ms) | Error(s) | Loops | Array Size |
+|------------------------------|--------------------|---------|-------|------------|
+| **C (Raw)**                  | 1172.04            | 0    | 30    | 268435456  |
+| **C (Atomic Operations)**     | 2333.54            | 0    | 30    | 268435456  |
+| **CUDA (Raw)**                | 10.492             | 10     | 30    | 268435456  |
+| **CUDA (Atomic Operations)**  | 63.63              | 0     | 30    | 268435456  |
+
 
 ## Analysis
 
