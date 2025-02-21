@@ -53,13 +53,13 @@ This CUDA program uses Unified Memory, memadvise, and prefetching to build a his
 | **CUDA (Atomic Operations)** | 63.63 | 30    | 268435456  |
 
 ## Analysis
-The CUDA implementation with atomic operations is significantly faster than the raw C implementation, attaining a speedup from 11720.4 ms to 63.63 ms due to the GPU's ability to handle parallel tasks efficiently. Atomic operations manage efficient simultaneous updates, Unified memory eliminates pesky data transfers. Prefetching optimizes data access by loading needed memory in advance, and memory advising helps optimize placement for faster execution. 
+The CUDA implementation with atomic operations is much faster than the raw C, attaining a speedup from 11720.4 ms to 63.63 ms this is because the GPU's strong suit is handling parallel tasks. Atomic operations handle efficient simultaneous updates, Unified memory eliminates pesky data transfers. Prefetching improves data access by preparing necessary memory beforehand, and memory advising assists in placement optimization for quicker execution.
 
 ---
 ### **vi.) Discussion**
 
-We had an "Aha!" moment when we saw how CUDA's atomic operations and memory management strategies significantly improved its performance compared to the raw C implementation. By utilizing atomic operations, it handled simultaneous updates to shared memory without race conditions. Additionally, Unified Memory, Memory Prefetching, and Memory Advising were used, contributing to the CUDA program's reduced execution time.
+We had an "Aha!" moment when we saw how CUDA's atomic operations and memory management techniques  improved its performance compared to the raw C implementation. With the use atomic operations, it handled simultaneous updates to shared memory without race conditions. Unified Memory, Memory Prefetching, and Memory Advising were used, contributing to the CUDA program's reduced execution time.
 
-We learned that smart memory handling plays a huge role in speeding up execution. While atomic operations helped, efficient data movement was just as important in making CUDA much faster for large-scale tasks.
+We learned that memory handling is very useful in speeding up execution. While atomic operations helped, efficient data movement which is also important in making the CUDA implementation much faster especially in larger data sets.
 
 
