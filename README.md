@@ -22,13 +22,21 @@ The program initializes vectors of size `n = 2^28` 32-bit integers. Each kernel 
 
 ---
 ### **ii.) Screenshot of the Program Output with execution time**
-**C Execution Time**  
+**C-RAW Execution Time**  
 
-<img src="https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/252feb7ff649c8556b1e3b1b5944f6ea615aef71/exec_times/c_time.png" alt="image alt" width="500"/>
+<img src="https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/96cb9686abe20d2501d79664baa5631bc0ffdc98/exec_times/c_raw_time.png" alt="image alt" width="500"/>
 
-**CUDA Execution Time**  
+**C-ATOMIC Execution Time**  
 
-<img src="https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/ca17d500afcea7afbcf1ded3e9e5712282da7a95/exec_times/cuda_time.png" alt="image alt" width="500"/>
+<img src="https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/c0b72b88b28a034498f14ac7a904cb5d7c3d5ee4/exec_times/c_atomic_time.png" alt="image alt" width="500"/>
+
+**CUDA-RAW Execution Time**  
+
+<img src="https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/c0b72b88b28a034498f14ac7a904cb5d7c3d5ee4/exec_times/cuda_raw_time.png" alt="image alt" width="500"/>
+
+**CUDA-ATOMIC Execution Time**  
+
+<img src="https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/c0b72b88b28a034498f14ac7a904cb5d7c3d5ee4/exec_times/cuda_atomic_time.png" alt="image alt" width="500"/>
 
 ---
 ### **iii.) Screenshot of the Program Output with correctness check (C)**
