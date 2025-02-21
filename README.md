@@ -45,5 +45,15 @@ This CUDA program uses Unified Memory, memadvise, and prefetching to build a his
 ---
 ### **v.) Comparative Table of Execution Time and Analysis of the Performance of the Kernel**
 
+# Performance Comparison: C vs. CUDA (Atomic Operations)
+
+| Implementation | Execution Time (ms) | Loops | Array Size |
+|---------------|--------------------|-------|------------|
+| **C (Raw)**   | 1172.04            | 30    | 268435456  |
+| **CUDA (Atomic Operations)** | 63.63 | 30    | 268435456  |
+
+## Analysis
+The CUDA implementation with atomic operations is significantly faster than the raw C implementation, attaining a speedup from 11720.4 ms to 63.63 ms due to the GPU's ability to handle parallel tasks efficiently. Atomic operations manage efficient simultaneous updates, Unified memory eliminates pesky data transfers. Prefetching optimizes data access by loading needed memory in advance, and memory advising helps optimize placement for faster execution. 
+
 ---
 ### **vi.) Discussion**
