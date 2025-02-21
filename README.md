@@ -25,7 +25,7 @@ The program initializes vectors of size `n = 2^28` 32-bit integers. Each kernel 
 
 |    C-RAW Execution Time    |  C-ATOMIC Execution Time   |
 | -------------------------- | -------------------------- |
-| ![image alt](https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/96cb9686abe20d2501d79664baa5631bc0ffdc98/exec_times/c_raw_time.png) | ![image alt](https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/c0b72b88b28a034498f14ac7a904cb5d7c3d5ee4/exec_times/c_atomic_time.png) |
+| ![image alt](https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/96cb9686abe20d2501d79664baa5631bc0ffdc98/exec_times/c_raw_time.png) | ![image alt](https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/7ed056cbc142f893707ae61cf539559a3b44507d/exec_times/c_atomic_time.png) |
 
 |  CUDA-RAW Execution Time   | CUDA-ATOMIC Execution Time |
 | -------------------------- | -------------------------- |
@@ -36,7 +36,7 @@ The program initializes vectors of size `n = 2^28` 32-bit integers. Each kernel 
 
 |    C-RAW Program Output    |  C-ATOMIC Program Output   |
 | -------------------------- | -------------------------- |
-| ![image alt](https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/109fe2955a4c98ece53e9150452256d4b46cd74a/exec_times/c_raw_code.png) | ![image alt](https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/109fe2955a4c98ece53e9150452256d4b46cd74a/exec_times/c_atomic_code.png) |
+| ![image alt](https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/109fe2955a4c98ece53e9150452256d4b46cd74a/exec_times/c_raw_code.png) | ![image alt](https://github.com/MichaelGelo/GRP2_DeepDive__CUDA/blob/7ed056cbc142f893707ae61cf539559a3b44507d/exec_times/c_atomic_code.png) |
 
 This C program creates a large array of integers, groups them into 10 bins based on the remainder, and then measures the time necessary to compute the histogram.
 
@@ -57,7 +57,7 @@ This CUDA program uses Unified Memory, memadvise, and prefetching to build a his
 | Implementation               | Execution Time (ms) | Error(s) | Loops | Array Size |
 |------------------------------|--------------------|---------|-------|------------|
 | **C (Raw)**                  | 1172.04            | 0    | 30    | 268435456  |
-| **C (Atomic Operations)**     | 2333.54            | 0    | 30    | 268435456  |
+| **C (Atomic Operations)**     | 2483.18            | 0    | 30    | 268435456  |
 | **CUDA (Raw)**                | 10.492             | 10     | 30    | 268435456  |
 | **CUDA (Atomic Operations)**  | 63.63              | 0     | 30    | 268435456  |
 
@@ -66,7 +66,7 @@ This CUDA program uses Unified Memory, memadvise, and prefetching to build a his
 
 When comparing raw C code with its counterpart that is implemented with atomic operations, it is clear that the raw C is significantly faster. This is expected, as atomic operations are designed to prevent race conditions, which introduces additional steps and increases execution time. We also created CUDA with no atomic operations which resulted in an error count this is due to multiple threads are accessing the same index in the resulting race condition.
 
-Now comparing the CUDA implementation with the C implementation it's evident that the CUDA significantly outperforms both versions of C, attaining a speedup from 1172.04 and 2333.54 ms to 63.63 ms. This is because we are utilizing the GPU's strong suit, handling parallel tasks. The CUDA implementation also implements the three features: Unified Memory eliminates pesky data transfers, Prefetching improves data access by preparing necessary memory beforehand, and memory advising assists in optimizing data placement leading to a much faster execution time. We did not include the speed of the CUDA without an atomic operation since it resulted in an error. 
+Now comparing the CUDA implementation with the C implementation it's evident that the CUDA significantly outperforms both versions of C, attaining a speedup from 1172.04 and 2483.18 ms to 63.63 ms. This is because we are utilizing the GPU's strong suit, handling parallel tasks. The CUDA implementation also implements the three features: Unified Memory eliminates pesky data transfers, Prefetching improves data access by preparing necessary memory beforehand, and memory advising assists in optimizing data placement leading to a much faster execution time. We did not include the speed of the CUDA without an atomic operation since it resulted in an error. 
 
 ---
 ### **vi.) Discussion**
