@@ -57,3 +57,9 @@ The CUDA implementation with atomic operations is significantly faster than the 
 
 ---
 ### **vi.) Discussion**
+
+We had an "Aha!" moment when we saw how CUDA's atomic operations and memory management strategies significantly improved its performance compared to the raw C implementation. By utilizing atomic operations, it handled simultaneous updates to shared memory without race conditions. Additionally, Unified Memory, Memory Prefetching, and Memory Advising were used, contributing to the CUDA program's reduced execution time.
+
+We learned that smart memory handling plays a huge role in speeding up execution. While atomic operations helped, efficient data movement was just as important in making CUDA much faster for large-scale tasks.
+
+
