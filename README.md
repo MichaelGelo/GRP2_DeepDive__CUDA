@@ -53,13 +53,20 @@ This CUDA program uses Unified Memory, memadvise, and prefetching to build a his
 | **CUDA (Atomic Operations)** | 63.63 | 30    | 268435456  |
 
 ## Analysis
-The CUDA implementation with atomic operations is much faster than the raw C, attaining a speedup from 11720.4 ms to 63.63 ms this is because the GPU's strong suit is handling parallel tasks. Atomic operations handle efficient simultaneous updates, Unified memory eliminates pesky data transfers. Prefetching improves data access by preparing necessary memory beforehand, and memory advising assists in placement optimization for quicker execution.
+
+When comparing raw C code with its counterpart that is implemented with atomic operations, it is clear that the raw C is significantly faster. This is expected, as atomic operations are designed to prevent race conditions, which introduces additional steps and increases execution time. We also created CUDA with no atomic operations which resulted in an error count this is due to multiple threads are accessing the same index in the resulting race condition.
+
+Now comparing the CUDA implementation with the C implementation it's evident that the CUDA significantly outperforms both versions of C, attaining a speedup from 1172.04 and 2333.54 ms to 63.63 ms. This is because we are utilizing the GPU's strong suit, handling parallel tasks. The CUDA implementation also implements the three features: Unified Memory eliminates pesky data transfers, Prefetching improves data access by preparing necessary memory beforehand, and memory advising assists in optimizing data placement leading to a much faster execution time.
 
 ---
 ### **vi.) Discussion**
 
-We had an "Aha!" moment when we saw how CUDA's atomic operations and memory management techniques  improved its performance compared to the raw C implementation. With the use atomic operations, it handled simultaneous updates to shared memory without race conditions. Unified Memory, Memory Prefetching, and Memory Advising were used, contributing to the CUDA program's reduced execution time.
+We had an "Aha!" moment when we compared the raw C with its atomic counterpart. We realized that the atomic operations slowed down the execution time because it is an added step that prevents race conditions.
 
-We learned that memory handling is very useful in speeding up execution. While atomic operations helped, efficient data movement which is also important in making the CUDA implementation much faster especially in larger data sets.
+We had another "Aha!" moment is when implemented a CUDA with no atomic operation. We could see that it was resulting in errors this is because race conditions are happening with some of the threads
+
+And the last "Aha!" moment when we saw how CUDA's atomic operations and memory management techniques improved its performance compared to the raw C implementation. With the use atomic operations, it handled simultaneous updates to shared memory without race conditions. Unified Memory, Memory Prefetching, and Memory Advising were used, contributing to the CUDA program's reduced execution time.
+
+We discovered that effective memory handling significantly speeds up execution. Additionally, atomic operations are essential in this specific application to utilize the GPU's parallel capabilities and prevent race conditions.
 
 
